@@ -1,0 +1,74 @@
+<html ng-app="musikais">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Validação de projeto">
+        <meta name="author" content="John Theo">
+
+        <title>Legal ou Absurdo?</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    </head>
+    <body ng-controller="musikaisController">
+        <!-- Imagem de fundo -->
+        <img src="{{path_img}}{{img.nome}}" id="bg" alt="">
+        <!-- Musica de fundo -->
+        <audio src="{{music.nome}}" autoplay="autoplay" loop="loop"></audio>
+        
+        <!-- Contato e Apoiadores -->
+        <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+                <li class="sidebar-brand">
+                    <a href="#top">Legal ou Absurdo?</a>
+                </li>
+                <li>
+                    <a href="#contact">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Faixa -->
+        <header id="top" class="header">
+            <div class="text-vertical-center">
+                <div class="box">
+                    <h1>Legal ou Absurdo?</h1>
+                    <h3>Se você estivesse <strong>NESTE LUGAR</strong> escutando <strong>ESTA MÚSICA</strong>... </h3>
+                </div>
+                <br>
+                <ul class="list-inline intro-social-buttons">
+                    <li>
+                        <a class="btn btn-dark btn-lg" ng-click="addVote(music.id_musica,img.id_local,'Legal')"><span class="glyphicon glyphicon-thumbs-up"></span> Legal</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-dark btn-lg" ng-click="addVote(music.id_musica,img.id_local,'Absurdo')"><span class="glyphicon glyphicon-thumbs-down"></span> Absurdo</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- AngularJS -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <!-- Controller AngularJS -->
+        <script type="text/javascript" src="app/app.js"></script>
+        <!-- jQuery Version 1.11.0 -->
+        <script src="http://startbootstrap.com/templates/stylish-portfolio/js/jquery-1.11.0.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="http://startbootstrap.com/templates/stylish-portfolio/js/bootstrap.min.js"></script>
+        <!-- Menu -->
+        <script type="text/javascript" src="js/menu.js"></script>
+        <!-- Resize Images -->
+        <script type="text/javascript" src="js/fullScreen.js"></script>
+    </body>
+</html>
