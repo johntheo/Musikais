@@ -1,0 +1,15 @@
+[22-Oct-2014 23:15:00] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/johnt376/public_html/musikais.com/includes/db.php on line 6
+[22-Oct-2014 23:15:00] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/getImages.php on line 5
+[22-Oct-2014 23:15:00] PHP Warning:  main() [<a href='function.main'>function.main</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/getImages.php on line 5
+[22-Oct-2014 23:15:02] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/johnt376/public_html/musikais.com/includes/db.php on line 6
+[22-Oct-2014 23:15:02] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/getMusics.php on line 5
+[22-Oct-2014 23:15:02] PHP Warning:  main() [<a href='function.main'>function.main</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/getMusics.php on line 5
+[22-Oct-2014 23:16:10] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/johnt376/public_html/musikais.com/includes/db.php on line 6
+[22-Oct-2014 23:16:10] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/addVote.php on line 12
+[22-Oct-2014 23:16:10] PHP Warning:  main() [<a href='function.main'>function.main</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/addVote.php on line 12
+[22-Oct-2014 23:16:10] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/johnt376/public_html/musikais.com/includes/db.php on line 6
+[22-Oct-2014 23:16:10] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/getImages.php on line 5
+[22-Oct-2014 23:16:10] PHP Warning:  main() [<a href='function.main'>function.main</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/getImages.php on line 5
+[22-Oct-2014 23:16:10] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/johnt376/public_html/musikais.com/includes/db.php on line 6
+[22-Oct-2014 23:16:10] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/getMusics.php on line 5
+[22-Oct-2014 23:16:10] PHP Warning:  main() [<a href='function.main'>function.main</a>]: Couldn't fetch mysqli in /home/johnt376/public_html/musikais.com/ajax/getMusics.php on line 5

@@ -1,7 +1,7 @@
 <?php 
 require_once '../includes/db.php'; // mysql connnect
 
-$query="select id_local, nome from `musikais`.`local`";
+$query="select id_local, nome from `johnt376_musikais`.`local`";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
 $arr = array();

@@ -1,0 +1,140 @@
+<html ng-app="musikais">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="E se os lugres pudessem ser musicados...">
+        <meta name="author" content="Musikais">
+        <meta name=viewport content="width=device-width">
+        <meta name=apple-mobile-web-app-capable content=yes>
+        <meta name=apple-mobile-web-app-status-bar-style content=black>
+
+        <title>Legal ou Absurdo?</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-social.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+        <!-- SCRIPTS -->
+        <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="js/fullScreen.js"></script>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $(".loader").fadeOut("slow");
+            })
+        </script>
+
+    </head>
+    <body ng-controller="musikaisController">
+        <!-- FULL SCREEN -->
+        <div id="page">
+
+            <!-- LOADER -->
+            <div class="loader"></div>
+
+            <!-- Imagem de fundo -->
+            <img src="{{path_img}}{{img.nome}}" preload="auto" id="bg" alt="">
+
+            <!-- Contato e Apoiadores -->
+            <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+            <nav id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+                    <li class="sidebar-brand">
+                        <a href="#top">Legal ou Absurdo?</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Faixa -->
+            <header id="top" class="header">
+                <div class="text-vertical-center">
+                    <div class="box">
+                        <h1>Legal ou Absurdo?</h1>
+                        <h3>Se estas músicas tocassem em um <strong>MESMO LOCAL</strong> sua <strong>COMBINAÇÃO</strong>seria... </h3>
+                    </div>
+                    <br>
+                    <ul class="list-inline intro-social-buttons">
+                        <li>
+                            <a class="btn btn-dark btn-lg" ng-click="addVote(music.id_musica,img.id_local,'Legal')"><span class="glyphicon glyphicon-thumbs-up"></span> Legal</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-dark btn-lg" ng-click="addVote(music.id_musica,img.id_local,'Absurdo')"><span class="glyphicon glyphicon-thumbs-down"></span> Absurdo</a>
+                        </li>
+                    </ul>                                     
+                </div>
+            </header>
+
+            <!-- Musica de fundo -->
+            <div id="audio-box">
+                <audio id="audio1" src="{{music.nome}}" controls autoplay loop></audio>
+                <audio id="audio2" src="{{music2.nome}}" controls autoplay loop></audio>
+    
+    
+                       
+            </div>
+
+        </div> <!-- fim do div page -->
+        
+        <!-- AngularJS -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <!-- Controller AngularJS -->
+        <script type="text/javascript" src="app/app.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="http://startbootstrap.com/templates/stylish-portfolio/js/bootstrap.min.js"></script>
+        <!-- Menu -->
+        <script type="text/javascript" src="js/menu.js"></script>
+
+        <script type="text/javascript" src="js/mobileFullScreen.js"></script>
+        <script>hideAddressbar('#page');</script>
+        
+    </body>
+    <script >
+			var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+			var myAudio1 = document.getElementById('audio1');
+			
+			
+			// Create a MediaElementAudioSourceNode
+			// Feed the HTMLMediaElement into it
+			var source1 = audioCtx.createMediaElementSource(myAudio1);
+			
+			// Create a stereo panner
+			var panNode1 = audioCtx.createStereoPanner();
+			
+			panNode1.pan.value = -1;
+			
+			// connect the AudioBufferSourceNode to the gainNode
+			// and the gainNode to the destination, so we can play the
+			// music and adjust the panning using the controls
+			source1.connect(panNode1);
+			panNode1.connect(audioCtx.destination);
+			
+			var myAudio2 = document.getElementById('audio2');
+			
+			
+			// Create a MediaElementAudioSourceNode
+			// Feed the HTMLMediaElement into it
+			var source2 = audioCtx.createMediaElementSource(myAudio2);
+			
+			// Create a stereo panner
+			var panNode2 = audioCtx.createStereoPanner();
+			
+			panNode2.pan.value = 1;
+			
+			// connect the AudioBufferSourceNode to the gainNode
+			// and the gainNode to the destination, so we can play the
+			// music and adjust the panning using the controls
+			source2.connect(panNode2);
+			panNode2.connect(audioCtx.destination);
+		</script>
+</html>

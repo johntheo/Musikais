@@ -1,0 +1,82 @@
+<html ng-app="musikais">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="E se os lugres pudessem ser musicados...">
+        <meta name="author" content="Musikais">
+        <meta name=viewport content="width=device-width">
+        <meta name=apple-mobile-web-app-capable content=yes>
+        <meta name=apple-mobile-web-app-status-bar-style content=black>
+
+        <title>Legal ou Absurdo? - DASHBOARD</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-social.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/tileGrid.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+        <!-- SCRIPTS -->
+        <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="js/fullScreen.js"></script>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $(".loader").fadeOut("slow");
+            })
+        </script>
+
+    </head>
+    <body ng-controller="musikaisController">
+        <!-- FULL SCREEN -->
+        <div id="page">
+        
+        	<h1>DASHBOARD</h1>
+	        <div class="box" ng-repeat="data in rank">
+		      <div class="boxInner">
+		        <img src="{{path_img}}{{data.localidade}}" id="bg"/>
+	            <audio style="margin-left: auto;margin-right: auto;text-align: center;position: relative;height: 5%;width: 100%;" src="{{data.musica}}" controls></audio>
+		        <div class="titleBox">VOTOS: {{data.votos}}</div>
+		      </div>
+		    </div>
+
+		    <hr>
+		    
+		    <p><strong>Lugar mais acessado: </strong> Trem na India</p>
+		    <p><strong>Música mais tocada: </strong> Dance with me Tonight - The Wonders </p>
+		    <p><strong>Média de permanência na página: </strong> 5 minutos</p>
+		    <p><strong> Matches ratio:</strong> 2.17</p>
+        </div> <!-- fim do div page -->
+        
+        <!-- AngularJS -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <!-- Controller AngularJS -->
+        <script type="text/javascript" src="app/app.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="http://startbootstrap.com/templates/stylish-portfolio/js/bootstrap.min.js"></script>
+        <!-- Menu -->
+        <script type="text/javascript">
+		    $(function(){
+		      // See if this is a touch device
+		      if ('ontouchstart' in window)
+		      {
+		        // Set the correct body class
+		        $('body').removeClass('no-touch').addClass('touch');
+		        
+		        // Add the touch toggle to show text
+		        $('div.boxInner img').click(function(){
+		          $(this).closest('.boxInner').toggleClass('touchFocus');
+		        });
+		      }
+		    });
+		  </script>
+
+        <script type="text/javascript" src="js/mobileFullScreen.js"></script>
+        <script>hideAddressbar('#page');</script>
+    </body>
+</html>

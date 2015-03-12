@@ -7,7 +7,7 @@ $image = $_GET['image'];
 $vote = $_GET['vote'];
 $created = time();
 
-$query="INSERT INTO `musikais`.`musica_local`(id_musica,id_local,voto,data) VALUES ('$music', '$image', '$vote', '$created')";
+$query="INSERT INTO `johnt376_musikais`.`musica_local`(id_musica,id_local,voto,data) VALUES ('$music', '$image', '$vote', '$created')";
 //$query="INSERT INTO `musikais`.`musica_local`(id_musica,id_local,data) VALUES ('$music', '$image', '$created')";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
