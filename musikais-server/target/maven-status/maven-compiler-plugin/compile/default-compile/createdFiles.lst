@@ -1,0 +1,5 @@
+com/musikais/controller/RecommendationController.class
+com/musikais/model/Geoloc.class
+com/musikais/service/RecommendationService.class
+com/musikais/util/DBUtility.class
+com/musikais/model/Recommendation.class
