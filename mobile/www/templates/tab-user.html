@@ -1,0 +1,37 @@
+<ion-view view-title="Passageiro">
+  <ion-content>
+    <ion-refresher pulling-text="Arraste para atualizar..." on-refresh="refresh(bus)">
+    </ion-refresher>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Onibus
+      </div>
+      <select ng-model="bus" ng-options="bus.id for bus in onibus track by bus.id" ng-change="change(bus)"></select>
+    </label>
+
+    <div class="item item-clear animate-show" ng-show="show">
+      <h2>{{busContext.regiao.nome}}</h2>
+      <p><i>{{busContext.musica.nomeArtista}} - {{busContext.musica.nomeMusica}}</i></p>
+      <p><i>[{{busContext.regiao.tipoRegiao}} | {{busContext.climaRest.mainInstance.temperature }}ºC]</i></p>
+    </div>
+    <ion-scroll zooming="true" direction="y" style="width: 100%; height: 65%">
+      <div class="item item-body animate-show" ng-show="show">
+
+        <img ng-src="http://curitiba.musikais.com/imagens/{{imagens[0]}}" class="full-image" />
+        <p>
+          {{busContext.regiao.descricao}}
+        </p>
+
+      </div>
+    </ion-scroll>
+    <div class="bar bar-footer tabs tabs-secondary tabs-icon-left animate-show" ng-show="show">
+      <a class="tab-item" href ng-click="vote(bus,1)">
+        <i class="icon ion-thumbsup"></i>
+      </a>
+      <a class="tab-item" href ng-click="vote(bus,2)">
+        <i class="icon ion-thumbsdown"></i>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

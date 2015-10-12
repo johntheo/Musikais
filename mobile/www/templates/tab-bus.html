@@ -1,0 +1,59 @@
+<ion-view title="Ônibus">
+  <ion-content ng-controller="BusCtrl" ng-init="initialize()" scroll="true">
+    <ion-list>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Onibus
+        </div>
+        <select ng-model="bus" ng-options="bus.id for bus in onibus track by bus.id"></select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Motorista
+        </div>
+        <select ng-model="motorista" ng-options="motorista.nome for motorista in motoristas track by motorista.nome"></select>
+      </label>
+
+      <button class="button button-block button-balanced button-play icon ion-play" ng-click="play()" ng-hide="playing"></button>
+      <button class="button button-block button-balanced button-play icon ion-pause" ng-click="play()" ng-show="playing"></button>
+      <!-- COLOCADO NO CONTROLLER CONFIG -->
+      <!-- <ion-toggle class="item item-icon-left item-icon-right" ng-model="settings.monitor">
+        <i class="icon ion-eye balanced"></i> Monitor
+      </ion-toggle>
+      <ion-toggle class="item item-icon-left item-icon-right" ng-model="settings.force">
+        <i class="icon ion-hammer balanced"></i> Force
+      </ion-toggle>-->
+      <!--<audio autoplay loop>
+        <source data-ng-src="{{musicaLink}}">
+      </audio>-->
+      <label class="item item-input" ng-show="settings.force">
+        <input type="number" ng-model="settings.latText" placeholder="Latitude">
+        <input type="number" ng-model="settings.lngText" placeholder="Longitude">
+      </label>
+      <label class="item no-padding" ng-show="settings.monitor">
+        <ion-scroll class="busDebug" zooming="false" direction="y">
+          <p>
+            <strong>Latitude: </strong>{{latitude}}</p>
+          <p>
+            <strong>Longitude: </strong>{{longitude}}</p>
+          <p>
+            <strong>Perto de: </strong>{{contexto.regiao.nome}} [{{contexto.regiao.tipoRegiao}}]</p>
+          <p>
+            <strong>Temperatura: </strong> {{contexto.climaRest.mainInstance.temperature}}ºC [{{contexto.clima.nome}}]</p>
+          <p>
+            <strong>Horário: </strong> {{hora}}:{{minuto}}:{{segundo}}
+          </p>
+          <hr></hr>
+          <h3>Músicas sugeridas</h3>
+          <div ng-repeat="musica in contexto.musicas">
+            <p>
+              <strong>{{musica.nomeArtista}}: </strong> {{musica.nomeMusica}}</p>
+          </div>
+        </ion-scroll>
+      </label>
+    </ion-list>
+    <div id="map" class="row responsive-sm map-class4 no-padding"></div>
+    <!--<div id="map" ng-class="mapClass"></div>-->
+
+  </ion-content>
+</ion-view>
