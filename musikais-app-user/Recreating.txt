@@ -1,0 +1,9 @@
+Recreating project
+==================
+npm i -g ionic && cordova
+npm i -g ios-deploy (somente se for MAC)
+ionic start musikais-app-user sidemenu
+ionic platform add android
+ionic platform add ios
+ionic plugin add cordova-plugin-inappbrowser
+ionic add angularfire ou bower install --save-dev angularfire
